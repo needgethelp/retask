@@ -5,6 +5,8 @@ Rails.application.routes.draw do
     resource :profile
   end
   
+  resources :tasks
+  
   root 'pages#home'
   
   # The priority is based upon order of creation: first created -> highest priority.

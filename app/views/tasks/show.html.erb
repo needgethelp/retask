@@ -1,0 +1,20 @@
+<div class="row">
+    <p>
+      <strong>Title:</strong>
+      <%= @task.title %>
+    </p>
+     
+    <p>
+      <strong>Description:</strong>
+      <%= @task.description %>
+    </p>
+    
+    <p>
+      <strong>Responsible:</strong>
+      <% @ownershipsList.each do |item| -%>
+          <%= item.user.profile.first_name %> <%=item.user.profile.last_name %>
+        
+        <% end -%>
+    </p>
+    
+</div>

@@ -1,0 +1,23 @@
+<div class="row col-md-8 col-md-offset-2">
+    <div class="well">
+    <h1>View Tasks</h1>
+    <table class="table">
+        <thead>
+          <tr>
+                <td>Title</td>
+                <td>Description</td>
+                <td>User</td>
+            <tr>            
+        </thead>
+        <tbody>
+        <% @tasks.each do |task| %>
+            <tr>
+                <td><%= task.title %></td>
+                <td><%= task.description %></td>
+                <td></td>
+            <tr>
+        <% end %>
+        </tbody>
+    </table>
+ </div>
+</div>
