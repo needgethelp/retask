@@ -3,7 +3,7 @@ class TasksController < ApplicationController
     
     def index
         @user = User.find(current_user)
-        @tasks = Task.all #.find_by ownership.user_id: @user
+        @tasks = @user.tasks
     end
     
     def new
