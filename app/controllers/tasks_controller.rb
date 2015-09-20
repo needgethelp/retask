@@ -72,10 +72,8 @@ class TasksController < ApplicationController
         redirect_to tasks_path
       else
         flash[:error] = "Task could not be deleted!"
-       redirect_to edit_task_path(params[:id])
+        redirect_to edit_task_path(params[:id])
       end
-      
-     
     end
     
     private

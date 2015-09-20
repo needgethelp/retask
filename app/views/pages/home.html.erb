@@ -5,20 +5,8 @@
     <div class="row ">
         <div class="col-md-6">
             <div class="well">
-                <h2 class="text-center"><%= link_to 'View your tasks', tasks_path %></h2>
-                <h2 class="text-center"><%= link_to 'Create new task', new_task_path %></h2>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="well">
-                <% if user_signed_in? %>
-                    <%= button_to "Sign Out", destroy_user_session_path, method: :delete, class: 'btn btn-primary navbar-btn' %>
-                    <%= link_to "Edit your profile", edit_user_profile_path(current_user) if current_user %> 
-                <% else %>
-                  <%= link_to "Log In", new_user_session_path, class: 'btn btn-primary navbar-btn', method: :get %>
-                  <%= button_to "Sign Up", new_user_registration_path, class: 'btn btn-primary navbar-btn', method: :get %>
-                <% end %>
-                
+                <%= button_to  'View your tasks', tasks_path ,method: :get,  class: 'btn btn-primary navbar-btn'%>
+                <%= button_to  'Create new task', new_task_path , method: :get, class: 'btn btn-primary navbar-btn'%>
             </div>
         </div>
     </div>

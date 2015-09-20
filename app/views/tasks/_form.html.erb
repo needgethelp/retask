@@ -11,10 +11,9 @@
     
      <p>
       <strong>Assignees:</strong>
-      <% @assignersList.each do |item| -%>
-          <%= item.profile.first_name %> <%=item.profile.last_name %>
-        
-        <% end -%>
+      <% @assignersList.each do |ass| %>
+          <%= ass.profile.first_name %> <%= ass.profile.last_name %>
+      <% end %>
     </p>
     
          <p>
@@ -25,10 +24,11 @@
     </p>
     
     <div class="form-group">
-    <%= f.submit "Update Task", class: 'btn btn-primary' %>
+    <%= f.submit "Update Task", class: 'btn btn-primary' , method: :PUT%>
     </div>
     
-    <div class="form-group">
-    <%= button_to "Delete Task", task_path(:id), class: 'btn btn-danger', method: :delete %>
-    </div>
+   
 <% end %>
+ <div class="form-group">
+        <%= link_to "Delete", task_path(@task.id), class: 'btn btn-danger', method: :DELETE %>
+</div>
