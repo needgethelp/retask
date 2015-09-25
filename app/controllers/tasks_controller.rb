@@ -25,6 +25,8 @@ class TasksController < ApplicationController
     end
     
     def update
+      @user_options = User.all.map{|u| [ u.email, u.id ] }
+      
       @task = Task.find( params[:id] )
       
       if (@task.update_attributes(task_params))
@@ -37,6 +39,8 @@ class TasksController < ApplicationController
     end
     
     def edit
+      @user_options = User.all.map{|u| [ u.email, u.id ] }
+      
       @task = Task.find( params[:id] )
       
       @assignersList = Set.new
@@ -51,7 +55,8 @@ class TasksController < ApplicationController
     end
     
     def show
-        @task = Task.find(params[:id])
+      @user_options = User.all.map{|u| [ u.email, u.id ] }
+      @task = Task.find(params[:id])
          
       @assignersList = Set.new
       @task.assignments.each do |ass|
